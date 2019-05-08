@@ -12,7 +12,7 @@ import SwiftyJSON
 
 private struct Constants {
     static let serverAddress = "https://catfact.ninja"
-    static let breedPath = "/breeds"
+    static let breedPath = "/breeds?limit=1000"
 }
 
 class NetworkProviderImpl: NetworkProvider {
