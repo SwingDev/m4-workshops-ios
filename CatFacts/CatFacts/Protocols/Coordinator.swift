@@ -16,7 +16,7 @@ protocol Coordinator: AnyObject {
 protocol RootCoordinator: Coordinator {
     var rootController: UINavigationController? { get set }
 
-    func pop(_ coordinatod: ChildCoordinator)
+    func pop(_ coordinator: ChildCoordinator)
 }
 
 protocol ChildCoordinator: Coordinator {

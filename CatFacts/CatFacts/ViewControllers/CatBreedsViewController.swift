@@ -68,6 +68,7 @@ class CatBreedsViewController: UIViewController {
                     let catBreedDetailsViewModel = self?.viewModel.breedsCellsModels.value[indexPath.row]
                 else { return Observable.never() }
 
+                self?.tableView.deselectRow(at: indexPath, animated: true)
                 return Observable.just(catBreedDetailsViewModel)
             }
             .bind(to: viewModel.triggerCell)

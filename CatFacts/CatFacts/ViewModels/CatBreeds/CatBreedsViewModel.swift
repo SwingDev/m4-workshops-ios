@@ -15,5 +15,6 @@ protocol CatBreedsViewModel {
     var isInProgress: BehaviorRelay<Bool> { get }
     var errorMessage: BehaviorRelay<String?> { get }
     var triggerCell: PublishSubject<CatBreedDetailsViewModel> { get }
+
     func setup()
 }

@@ -21,7 +21,7 @@ class CatBreedsViewModelImpl: CatBreedsViewModel {
     private let bag = DisposeBag()
     private var breeds = BehaviorRelay<[CatBreed]>(value: [])
 
-    required init(context: AppContext) {
+    init(context: AppContext) {
         self.context = context
     }
 

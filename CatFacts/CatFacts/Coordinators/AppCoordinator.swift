@@ -36,19 +36,16 @@ class AppCoordinator: RootCoordinator {
         window?.makeKeyAndVisible()
     }
 
-    func pop(_ coordinatod: ChildCoordinator) {
-        guard
-            let viewController = coordinatod.controller,
-            let index = childs.firstIndex(where: { $0 === coordinatod })
-            else { return }
-        
+    func pop(_ coordinator: ChildCoordinator) {
+        guard let index = childs.firstIndex(where: { $0 === coordinator }) else { return }
+
         childs.remove(at: index)
-        viewController.removeFromParent()
+        rootController?.popViewController(animated: true)
     }
 
     private func push(_ coordinator: ChildCoordinator) {
         guard let viewController = coordinator.controller else { return }
-        
+
         childs.append(coordinator)
         rootController?.pushViewController(viewController, animated: true)
     }
@@ -57,7 +54,7 @@ class AppCoordinator: RootCoordinator {
 extension AppCoordinator: AppCoordinatorDelegate {
     func didSelectCell(with catBreedDetailsViewModel: CatBreedDetailsViewModel) {
         let catBreedDetailsCoordinator = CatBreedDetailsCoordinator(context: context,
-                                                                    viewModel: catBreedDetailsViewModel)
+                                                                    breed: catBreedDetailsViewModel.catBreed)
         catBreedDetailsCoordinator.rootCoordinator = self
         catBreedDetailsCoordinator.start()
 

@@ -7,7 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol CatBreedDetailsViewModel {
     var catBreed: CatBreed { get }
+    var backButtonTriggered: PublishSubject<Void> { get }
+
+    func setup()
 }

@@ -9,20 +9,31 @@
 import Foundation
 import UIKit
 
+protocol CatBreedDetailsDelegate: AnyObject {
+    func backButtonTapped()
+}
+
 class CatBreedDetailsCoordinator: ChildCoordinator {
     var controller: UIViewController?
     weak var rootCoordinator: RootCoordinator?
 
     private var context: AppContext
-    private var viewModel: CatBreedDetailsViewModel
+    private var breed: CatBreed
 
-    init(context: AppContext, viewModel: CatBreedDetailsViewModel) {
+    init(context: AppContext, breed: CatBreed) {
         self.context = context
-        self.viewModel = viewModel
-        print(viewModel.catBreed.breed)
+        self.breed = breed
     }
 
     func start() {
+        let viewModel = CatBreedDetailsViewModelImpl(catBreed: breed)
+        viewModel.delegate = self
         controller = CatBreedDetailsViewController(viewModel: viewModel)
+    }
+}
+
+extension CatBreedDetailsCoordinator: CatBreedDetailsDelegate {
+    func backButtonTapped() {
+        rootCoordinator?.pop(self)
     }
 }
