@@ -60,6 +60,19 @@ class CatBreedsViewController: UIViewController {
             .map { $0?.isEmpty ?? false }
             .bind(to: errorLabel.rx.isHidden)
             .disposed(by: bag)
+
+        tableView.rx
+            .itemSelected
+            .flatMap { [weak self] indexPath -> Observable<CatBreedDetailsViewModel> in
+                guard
+                    let catBreedDetailsViewModel = self?.viewModel.breedsCellsModels.value[indexPath.row]
+                else { return Observable.never() }
+
+                self?.tableView.deselectRow(at: indexPath, animated: true)
+                return Observable.just(catBreedDetailsViewModel)
+            }
+            .bind(to: viewModel.triggerCell)
+            .disposed(by: bag)
     }
 }
 

@@ -17,6 +17,11 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "Breeds.Title")
   }
 
+  internal enum Button {
+    /// Back
+    internal static let back = L10n.tr("Localizable", "Button.Back")
+  }
+
   internal enum ErrorMessages {
     /// Loading Failed
     internal static let loadingFailed = L10n.tr("Localizable", "ErrorMessages.LoadingFailed")

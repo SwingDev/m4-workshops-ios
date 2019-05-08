@@ -11,15 +11,17 @@ import RxSwift
 import RxCocoa
 
 class CatBreedsViewModelImpl: CatBreedsViewModel {
+    weak var delegate: AppCoordinatorDelegate?
     var context: AppContext
     var breedsCellsModels = BehaviorRelay<[CatBreedDetailsViewModel]>(value: [])
     var isInProgress = BehaviorRelay<Bool>(value: false)
     var errorMessage = BehaviorRelay<String?>(value: nil)
+    var triggerCell = PublishSubject<CatBreedDetailsViewModel>()
 
     private let bag = DisposeBag()
     private var breeds = BehaviorRelay<[CatBreed]>(value: [])
 
-    required init(context: AppContext) {
+    init(context: AppContext) {
         self.context = context
     }
 
@@ -46,6 +48,13 @@ class CatBreedsViewModelImpl: CatBreedsViewModel {
             .catchErrorJustReturn([])
             .map { $0.map(CatBreedDetailsViewModelImpl.init) }
             .bind(to: breedsCellsModels)
+            .disposed(by: bag)
+
+        triggerCell
+            .asObserver()
+            .subscribe(onNext: { [weak self] catBreedDetailsViewModel in
+                self?.delegate?.didSelectCell(with: catBreedDetailsViewModel)
+            })
             .disposed(by: bag)
     }
 }

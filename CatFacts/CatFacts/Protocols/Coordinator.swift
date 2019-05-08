@@ -15,8 +15,11 @@ protocol Coordinator: AnyObject {
 
 protocol RootCoordinator: Coordinator {
     var rootController: UINavigationController? { get set }
+
+    func pop(_ coordinator: ChildCoordinator)
 }
 
 protocol ChildCoordinator: Coordinator {
     var controller: UIViewController? { get set }
+    var rootCoordinator: RootCoordinator? { get }
 }

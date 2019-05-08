@@ -6,5 +6,6 @@
   Copyright © 2019 SwingDev. All rights reserved.
 */
 
+"Button.Back" = "Back";
 "Breeds.Title" = "Cat Breeds";
 "ErrorMessages.LoadingFailed" = "Loading Failed";

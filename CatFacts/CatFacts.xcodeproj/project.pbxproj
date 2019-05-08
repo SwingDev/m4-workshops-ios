@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0B649A2282C2A100640E2E /* CatBreedDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B64992282C2A100640E2E /* CatBreedDetailsCoordinator.swift */; };
+		0F0B649E2282CAE400640E2E /* CatBreedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B649D2282CAE400640E2E /* CatBreedDetailsViewController.swift */; };
 		0F55FB782280ABA2003351DE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F55FB772280ABA2003351DE /* Coordinator.swift */; };
 		0F87C0612281861F00910EA7 /* CatBreedsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F87C0602281861F00910EA7 /* CatBreedsViewModel.swift */; };
 		0F87C0632281864300910EA7 /* CatBreedDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F87C0622281864300910EA7 /* CatBreedDetailsViewModel.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F0B64992282C2A100640E2E /* CatBreedDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedDetailsCoordinator.swift; sourceTree = "<group>"; };
+		0F0B649D2282CAE400640E2E /* CatBreedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedDetailsViewController.swift; sourceTree = "<group>"; };
 		0F55FB772280ABA2003351DE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0F87C0602281861F00910EA7 /* CatBreedsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedsViewModel.swift; sourceTree = "<group>"; };
 		0F87C0622281864300910EA7 /* CatBreedDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				0F896A4A2280A8EC001DC6ED /* AppCoordinator.swift */,
+				0F0B64992282C2A100640E2E /* CatBreedDetailsCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				0F9873D6228037600075AB2B /* CatBreedsViewController.swift */,
+				0F0B649D2282CAE400640E2E /* CatBreedDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -547,9 +553,11 @@
 				EA7B2E452280921E0086E4F5 /* AppError.swift in Sources */,
 				EA7B2E532280E47A0086E4F5 /* AppContext.swift in Sources */,
 				0F87C0612281861F00910EA7 /* CatBreedsViewModel.swift in Sources */,
+				0F0B649E2282CAE400640E2E /* CatBreedDetailsViewController.swift in Sources */,
 				0F87C0682281A1FB00910EA7 /* CatBreedDetailsViewModelImpl.swift in Sources */,
 				EAFE014222820529007DD0B0 /* assets-images.swift in Sources */,
 				EAFE014322820529007DD0B0 /* strings.swift in Sources */,
+				0F0B649A2282C2A100640E2E /* CatBreedDetailsCoordinator.swift in Sources */,
 				EA7B2E4222807B880086E4F5 /* CatBreed.swift in Sources */,
 				EA7B2E582280E8A80086E4F5 /* NetworkProviderMock.swift in Sources */,
 				0F87C0632281864300910EA7 /* CatBreedDetailsViewModel.swift in Sources */,
